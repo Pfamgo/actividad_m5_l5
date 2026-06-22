@@ -1,34 +1,35 @@
-# Diccionario de Datos - Sistema Universitario
+# DICCIONARIO DE DATOS - SISTEMA UNIVERSITARIO
 
-## 1. Tabla: estudiante
-**Descripción:** Almacena la información de identificación de los alumnos matriculados.
+## 1. TABLA: ESTUDIANTE
+**DESCRIPCIÓN:** ALMACENA LA INFORMACIÓN DE IDENTIFICACIÓN DE LOS ALUMNOS MATRICULADOS.
 
-| Campo | Tipo de Datos | Nulo | Clave | Predeterminado | Descripción |
+| CAMPO | TIPO DE DATOS | NULO | CLAVE | PREDETERMINADO | DESCRIPCIÓN |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| id | SERIAL | NO | PK | *Autoincremental* | Identificador único interno del registro. |
-| rut | VARCHAR(12) | NO | UK | *Ninguno* | Rol Único Tributario del estudiante (Formato: 12345678-K). |
-| nombre | VARCHAR(50) | NO | - | *Ninguno* | Nombre completo del alumno. |
+| ID | SERIAL | NO | PK | *AUTOINCREMENTAL* | IDENTIFICADOR ÚNICO INTERNO DEL REGISTRO. |
+| RUT | VARCHAR(12) | NO | UK | *NINGUNO* | ROL ÚNICO TRIBUTARIO DEL ESTUDIANTE (FORMATO: 12345678-K). |
+| NOMBRE | VARCHAR(50) | NO | - | *NINGUNO* | NOMBRE COMPLETO DEL ALUMNO. |
 
-## 2. Tabla: curso
-**Descripción:** Registra las asignaturas disponibles en la institución académica.
+## 2. TABLA: CURSO
+**DESCRIPCIÓN:** REGISTRA LAS ASIGNATURAS DISPONIBLES EN LA INSTITUCIÓN ACADÉMICA.
 
-| Campo | Tipo de Datos | Nulo | Clave | Predeterminado | Descripción |
+| CAMPO | TIPO DE DATOS | NULO | CLAVE | PREDETERMINADO | DESCRIPCIÓN |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| id | SERIAL | NO | PK | *Autoincremental* | Identificador único interno de la asignatura. |
-| codigo | VARCHAR(10) | NO | UK | *Ninguno* | Código alfanumérico institucional del curso (ej: INF-201). |
-| nombre | VARCHAR(50) | NO | - | *Ninguno* | Nombre de la asignatura. |
-| docente_responsable | VARCHAR(50) | SÍ | - | *Ninguno* | Nombre del profesor encargado de dictar la materia. |
+| ID | SERIAL | NO | PK | *AUTOINCREMENTAL* | IDENTIFICADOR ÚNICO INTERNO DE LA ASIGNATURA. |
+| CODIGO | VARCHAR(10) | NO | UK | *NINGUNO* | CÓDIGO ALFANUMÉRICO INSTITUCIONAL DEL CURSO (EJ: INF-201). |
+| NOMBRE | VARCHAR(50) | NO | - | *NINGUNO* | NOMBRE DE LA ASIGNATURA. |
+| DOCENTE_RESPONSABLE | VARCHAR(50) | SÍ | - | *NINGUNO* | NOMBRE DEL PROFESOR ENCARGADO DE DICTAR LA MATERIA. |
 
-## 3. Tabla: matricula
-**Descripción:** Tabla asociativa que registra la inscripción histórica y vigente de estudiantes en sus respectivos cursos.
+## 3. TABLA: MATRICULA
+**DESCRIPCIÓN:** TABLA ASOCIATIVA QUE REGISTRA LA INSCRIPCIÓN HISTÓRICA Y VIGENTE DE ESTUDIANTES EN SUS RESPECTIVOS CURSOS.
 
-| Campo | Tipo de Datos | Nulo | Clave | Predeterminado | Descripción |
+| CAMPO | TIPO DE DATOS | NULO | CLAVE | PREDETERMINADO | DESCRIPCIÓN |
 | :--- | :--- | :---: | :---: | :---: | :--- |
-| id | SERIAL | NO | PK | *Autoincremental* | Identificador único del evento de matrícula. |
-| fecha_inscripcion | DATE | SÍ | - | CURRENT_DATE | Fecha calendario en la que se realiza la inscripción. |
-| anio | INT | SÍ | - | *Ninguno* | Año académico en el que se cursa la asignatura. |
-| rut_estudiante | VARCHAR(12) | SÍ | FK | *Ninguno* | Clave foránea. Relaciona con `estudiante(rut)`. ON DELETE CASCADE. |
-| codigo_curso | VARCHAR(10) | SÍ | FK | *Ninguno* | Clave foránea. Relaciona con `curso(codigo)`. ON DELETE CASCADE. |
+| ID | SERIAL | NO | PK | *AUTOINCREMENTAL* | IDENTIFICADOR ÚNICO DEL EVENTO DE MATRÍCULA. |
+| FECHA_INSCRIPCION | DATE | SÍ | - | CURRENT_DATE | FECHA CALENDARIO EN LA QUE SE REALIZA LA INSCRIPCIÓN. |
+| ANIO | INT | SÍ | - | *NINGUNO* | AÑO ACADÉMICO EN EL QUE SE CURSA LA ASIGNATURA. |
+| RUT_ESTUDIANTE | VARCHAR(12) | SÍ | FK | *NINGUNO* | CLAVE FORÁNEA. RELACIONA CON `ESTUDIANTE(RUT)`. ON DELETE CASCADE. |
+| CODIGO_CURSO | VARCHAR(10) | SÍ | FK | *NINGUNO* | CLAVE FORÁNEA. RELACIONA CON `CURSO(CODIGO)`. ON DELETE CASCADE. |
+
 
 # 4. Reflexión 
 ### CUAL FUE LA MAYOR DIFICULTAD AL TRANSFORMAR EL MODELO CONCEPTUAL AL RELACIONAL?
